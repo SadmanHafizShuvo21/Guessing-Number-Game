@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A challenging number guessing game — pick a range and try to find the secret number before your guesses run out!" />
+  <title>Guessing Number Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="card" id="card">
+    <div class="card-glow"></div>
+    <div class="logo">🎯</div>
+    <h1>Guessing Number Game</h1>
+    <p class="subtitle">Can you find the secret number before your guesses run out?</p>
+
+    <section id="setup">
+      <div class="input-group">
+        <label for="l">First number</label>
+        <input id="l" type="number" value="1" />
+      </div>
+      <div class="input-group">
+        <label for="r">Last number</label>
+        <input id="r" type="number" value="100" />
+      </div>
+      <button id="startBtn" class="btn btn-primary">
+        <span class="btn-text">Start Game</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </section>
+
+    <section id="play" hidden>
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-label">Range</span>
+          <span class="stat-value" id="rangeText"></span>
+        </div>
+        <div class="stat-card stat-attempts">
+          <span class="stat-label">Guesses Left</span>
+          <span class="stat-value" id="attemptsText"></span>
+        </div>
+      </div>
+      <div class="range-bar-container">
+        <div class="range-bar" id="rangeBar"></div>
+      </div>
+      <div class="guess-row">
+        <input id="guess" type="number" placeholder="Enter your guess..." />
+        <button id="guessBtn" class="btn btn-primary">Guess</button>
+      </div>
+      <div id="historyContainer" hidden>
+        <p class="history-title">Guess History</p>
+        <ul id="historyList" class="history-list"></ul>
+      </div>
+    </section>
+
+    <p id="message" class="message"></p>
+    <button id="againBtn" class="btn btn-secondary" hidden>
+      <span class="btn-text">Play Again</span>
+      <span class="btn-icon">↻</span>
+    </button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
